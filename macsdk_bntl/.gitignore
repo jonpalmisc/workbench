@@ -2,3 +2,4 @@ data/
 out/
 
 .ipynb_checkpoints/
+playground.py
