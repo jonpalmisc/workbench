@@ -42,12 +42,9 @@ ARCH_NAME = "aarch64"
 PLATFORM_NAME = "mac-" + ARCH_NAME
 
 # BNTL output file path and library name
-LIBRARY_NAME = "libSystem.B.dylib"
-OUTPUT_PATH = (
-    "/Applications/Binary Ninja.app/Contents/Resources/typelib/aarch64/"
-    + LIBRARY_NAME
-    + ".bntl"
-)
+LIBRARY_NAME = "/usr/lib/libSystem.B.dylib"
+OUTPUT_PATH = "/Applications/Binary Ninja.app/Contents/Resources/typelib/aarch64/libSystem.B.dylib.bntl"
+
 
 # ===------------------------------------------------------------------------===
 
