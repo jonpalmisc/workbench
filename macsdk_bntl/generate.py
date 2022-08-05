@@ -17,17 +17,32 @@ SDK_ROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform
 
 # Wildcard patterns of files to parse
 SOURCE_PATTERNS = [
+    "copyfile.h",
+    "dispatch/dispatch.h",
     "kern/*.h",
+    "libgen.h",
     "libkern/*.h",
     "mach/*.h",
+    "mach-o/*.h",
     "malloc/*.h",
+    "os/*.h",
+    "pthread/*.h",
     "sys/*.h",
+    "spawn.h",
+    "uuid/*.h",
     "xpc/xpc.h",
+    # --------------------------------------------------------------------------
+    "string.h",
+    "stdio.h",
+    "stdlib.h",
+    "unistd.h",
 ]
 
 # Files which should be ignored
 BLACKLIST = {
     "mach_eventlink.h",
+    "os/_workgroup",
+    "os/workgroup_",
     "sys/ubc.h",
     "sys/_symbol_aliasing.h",
     "sys/_posix_availability.h",
