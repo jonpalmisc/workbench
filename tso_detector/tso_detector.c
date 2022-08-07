@@ -11,7 +11,7 @@
 #include <pthread.h>
 
 #define BUFFER_SIZE 1024 * 8        /* Size of work buffer in elements */
-#define ITER_LIMIT  BUFFER_SIZE * 4 /* Iteration limit for success */
+#define ITER_LIMIT  BUFFER_SIZE * 8 /* Iteration limit for success */
 
 atomic_uint g_total_iterations;
 atomic_uint g_buffer[BUFFER_SIZE];
