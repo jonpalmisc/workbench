@@ -1,6 +1,6 @@
 ---
 BasedOnStyle:				WebKit
-ColumnLimit:				88
+ColumnLimit:				100
 AlignTrailingComments:			'true'
 AlignConsecutiveMacros:			'true'
 AllowAllArgumentsOnNextLine:		'false'
