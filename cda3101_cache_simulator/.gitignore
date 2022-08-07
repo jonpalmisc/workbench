@@ -1,0 +1,6 @@
+input/
+build/
+*.aux
+*.log
+*.pdf
+*.toc

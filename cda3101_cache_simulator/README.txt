@@ -1,0 +1,3 @@
+An old project from university, now useful again for testing Go support in
+disassemblers and decompilers. The actual cache simulation implementation is
+likely not correct, but that wasn't required for the assignment...
