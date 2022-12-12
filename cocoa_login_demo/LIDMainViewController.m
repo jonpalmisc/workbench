@@ -40,9 +40,6 @@
     [self.view addSubview:mainStackView];
 
     [NSLayoutConstraint activateConstraints:@[
-        [_emailField.widthAnchor constraintGreaterThanOrEqualToConstant:256.0],
-        [_passwordField.widthAnchor constraintGreaterThanOrEqualToConstant:256.0],
-
         // Effectively right-align all field labels.
         [emailLabel.widthAnchor constraintEqualToAnchor:passwordLabel.widthAnchor],
 
@@ -51,6 +48,7 @@
         [_loginButton.trailingAnchor constraintEqualToAnchor:mainStackView.trailingAnchor],
         [_loginButton.widthAnchor constraintEqualToConstant:72.0],
 
+        [mainStackView.widthAnchor constraintGreaterThanOrEqualToConstant:384.0],
         [mainStackView.leadingAnchor constraintEqualToSystemSpacingAfterAnchor:self.view.leadingAnchor multiplier:1],
         [mainStackView.topAnchor constraintEqualToSystemSpacingBelowAnchor:self.view.topAnchor multiplier:1],
         [self.view.trailingAnchor constraintEqualToSystemSpacingAfterAnchor:mainStackView.trailingAnchor multiplier:1],
