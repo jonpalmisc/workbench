@@ -1,0 +1,9 @@
+[package]
+name = "rust_aarch64_baremetal"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
