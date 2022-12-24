@@ -1,0 +1,6 @@
+<RCC>
+	<qresource prefix="/">
+		<file>assets/lorem.txt</file>
+		<file>assets/ricotta.txt</file>
+	</qresource>
+</RCC>
