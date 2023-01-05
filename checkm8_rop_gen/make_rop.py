@@ -42,7 +42,7 @@ def make_rop_chain(base, func_gadget, callbacks) -> str:
             base += 0x10
 
             if j == 4:
-                address += 0x50
+                base += 0x50
 
             if i + j < len(callbacks) - 1:
                 block1 += quad_literal(func_gadget)
