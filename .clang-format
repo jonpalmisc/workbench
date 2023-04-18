@@ -1,14 +1,8 @@
 ---
-BasedOnStyle:				WebKit
-ColumnLimit:				100
-AlignTrailingComments:			'true'
-AlignConsecutiveMacros:			'true'
-AllowAllArgumentsOnNextLine:		'false'
-AllowShortFunctionsOnASingleLine:	'false'
-AllowShortEnumsOnASingleLine:		'false'
-UseTab:					AlignWithSpaces
-TabWidth:				8
-IndentWidth:				8
-IndentAccessModifiers:			false
-AccessModifierOffset:			-8
+BasedOnStyle:			WebKit
+
+AllowAllArgumentsOnNextLine:	false
+AlignTrailingComments:		true
+AlignConsecutiveMacros:		true
+PointerAlignment:		Right
 ...
