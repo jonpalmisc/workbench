@@ -9,7 +9,7 @@ This is my chaotic playground for tiny experiments and proof-of-concepts.
 
 Bugs are guaranteed, documentation is improbable, and quality is unlikely. Don't
 expect much. However, if you find something here that interests you or that you
-want to talk about, feel free to reach out on Twitter, [@jonpalmisc](https://twitter.com/jonpalmisc).
+want to talk about, feel free to [get in touch](https://jonpalmisc.com/contact).
 
 ## License
 
