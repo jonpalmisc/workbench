@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 int arithmetic_square(int num)
 {
@@ -44,14 +45,15 @@ size_t string_length(struct String const *string)
     return string->length;
 }
 
-int example_ssa_small(int p1, int p2)
+int example_ssa_small()
 {
-    int x = p1 + 2;
+    int x = rand();
+    x += 3;
 
-    if (p1)
-        x += 7;
+    if (x % 2 == 0)
+        x *= 4;
     else
-        x *= p2;
+        x -= 1;
 
     return x;
 }
