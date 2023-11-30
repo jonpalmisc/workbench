@@ -1,0 +1,16 @@
+seed: 7
+bloater:
+  enabled: true
+  rounds: 2
+  probability: 35
+  patterns:
+    - validate_serial
+arithmetic-mangler:
+  enabled: true
+  rounds: 2
+  patterns:
+    - validate_serial
+flattener:
+  enabled: true
+  patterns:
+    - validate_serial
