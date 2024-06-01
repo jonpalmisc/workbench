@@ -1,9 +1,20 @@
-from typing import List, Tuple, Optional, TYPE_CHECKING
+from typing import List, Tuple, Optional
 
 import ida_hexrays
 import ida_funcs
-import ida_name
 import ida_idp
+import ida_xref
+import ida_name
+import ida_kernwin
+
+DEBUG = True
+
+
+def dbg(*args):
+    if not DEBUG:
+        return
+
+    print("\t", *args)
 
 
 def mop_to_int(mop: ida_hexrays.mop_t) -> Optional[int]:
@@ -36,8 +47,6 @@ class reg_write_finder_t(ida_hexrays.minsn_visitor_t):
             return 0
         if (value := mop_to_int(minsn.l)) is not None:
             self.results.append((minsn.ea, value))
-        else:
-            print(f"Warning: Found unhandled write at {minsn.ea:#x} {minsn.l.t}!")
 
         return 0
 
@@ -68,15 +77,55 @@ def find_reg_writes(reg_name: str, func: ida_funcs.func_t) -> List[Tuple[int, in
     return writes
 
 
-if TYPE_CHECKING:
+def find_x0_backwards(start_ea: int) -> Optional[Tuple[int, int]]:
+    func = ida_funcs.get_func(start_ea)
 
-    def here() -> int:
-        return 0
+    dbg(
+        f"Finding writes to X0 starting from {start_ea:#x} in `{ida_name.get_name(func.start_ea)}`:"
+    )
+    all_writes = find_reg_writes("X0", func)
+
+    last_rel_write = None
+    for addr, value in all_writes:
+        dbg(f"  at {addr:#x}: X0 <- {value:#x} {'(after)' if addr > start_ea else ''}")
+        if addr < start_ea:
+            last_rel_write = (addr, value)
+    else:
+        dbg("  (none)")
+
+    if last_rel_write:
+        return last_rel_write
+
+    dbg("No relevant writes, searching backwards...")
+    blk = ida_xref.xrefblk_t()
+    refs = list(blk.fcrefs_to(func.start_ea))
+    if len(refs) != 1:
+        dbg("  Found non-linear call chain!")
+        return None
+
+    return find_x0_backwards(refs[0])
 
 
-func = ida_funcs.get_func(here())
-reg = "X0"
+def find_info(start_ea: int):
+    print(f"Searching from {start_ea:#x}...")
+    result = find_x0_backwards(start_ea)
+    if result:
+        addr, value = result
+        print(f"  {addr:#x}: X0 <- {value:#x}")
+    else:
+        print("  (unknown)")
 
-print(f"Finding writes to {reg} in `{ida_name.get_name(func.start_ea)}`:")
-for addr, value in find_reg_writes(reg, func):
-    print(f"  at {addr:#x}: {reg} <- {value:#x}")
+
+OSMC_CTOR_EA = 0xFFFFFFF0083A2664
+
+i = 0
+ida_kernwin.show_wait_box(f"Searching for X0...")
+for call_ea in ida_xref.xrefblk_t().fcrefs_to(OSMC_CTOR_EA):
+    ida_kernwin.replace_wait_box(f"Searching for X0 from {call_ea:#x}... ({i})")
+    if ida_kernwin.user_cancelled():
+        break
+
+    find_info(call_ea)
+    i += 1
+
+ida_kernwin.hide_wait_box()
