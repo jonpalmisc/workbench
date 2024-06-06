@@ -1,0 +1,113 @@
+<head>
+  <style>
+    body {
+      font-family: "Berkeley Mono", sans-serif;
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 1px solid black;
+    }
+
+    td {
+      padding: 0.5rem;
+      text-align: center;
+    }
+    tr {
+      border-bottom: 1px solid black;
+    }
+
+    tr.nbb {
+      border-bottom: none;
+    }
+    td.cat {
+      text-align: right;
+      border-right: 1px solid black;
+    }
+
+    td.note {
+      border-left: 1px solid black;
+      text-align: left;
+    }
+
+    td.rs {
+      background: #b6e3ff;
+    }
+    td.es {
+      background: #aceebb;
+    }
+
+    td.args {
+      background: #ecd8ff;
+    }
+
+    td.fp {
+      background: #fae17d;
+    }
+
+    td.lr {
+      background: #ffd8b5;
+    }
+
+    td.sp {
+      background: #ffd3eb;
+    }
+
+    td.gp {
+      background: #eaeef2;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>AArch64 Registers</h3>
+  <table>
+    <tr class="nbb">
+      <td class="cat rs" rowspan="6">Caller-saved</td>
+      <td>x0</td>
+      <td class="note args" rowspan="3">Arguments</td>
+    </tr>
+    <tr class="nbb">
+      <!-- <td>&#x22EE;</td> -->
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>x7</td>
+    </tr>
+    <tr class="nbb">
+      <td>x9</td>
+      <td class="note gp" rowspan="6">General use</td>
+    </tr>
+    <tr class="nbb">
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>x18</td>
+    </tr>
+
+    <tr class="nbb">
+      <td class="cat es" rowspan="4">Callee-saved</td>
+      <td>x19</td>
+    </tr>
+    <tr class="nbb">
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>x28</td>
+    </tr>
+    <tr>
+      <td>x29</td>
+      <td class="note fp">Frame pointer</td>
+    </tr>
+    <tr>
+      <td class="cat rs">Caller-saved</td>
+      <td>x30</td>
+      <td class="note lr">Link register</td>
+    </tr>
+    <tr>
+      <td class="cat es">Callee-saved</td>
+      <td>x31</td>
+      <td class="note sp">Stack pointer</td>
+    </tr>
+  </table>
+</body>
