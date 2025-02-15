@@ -1,0 +1,4 @@
+build2enum.*
+config.gperf
+builds.h
+convert*.h
