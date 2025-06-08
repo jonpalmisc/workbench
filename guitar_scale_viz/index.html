@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Guitar Scale Visualizer</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="controls">
+        <div class="control-group">
+          <label for="string-count">Guitar</label>
+          <select id="string-count">
+            <option value="6">6-String</option>
+            <option value="7">7-String</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="tuning">Tuning</label>
+          <select id="tuning"></select>
+        </div>
+        <div class="control-group">
+          <label for="root-note">Root Note</label>
+          <select id="root-note"></select>
+        </div>
+        <div class="control-group">
+          <label for="scale">Scale</label>
+          <select id="scale"></select>
+        </div>
+        <div class="control-group">
+          <label for="fret-count-input">Frets</label>
+          <input type="number" id="fret-count-input" min="12" max="24" />
+        </div>
+        <div class="control-group">
+          <label> </label>
+          <!-- Spacer for alignment -->
+          <label class="checkbox-label">
+            <input type="checkbox" id="show-all-notes-toggle" />
+            <span>Show all notes</span>
+          </label>
+        </div>
+      </div>
+
+      <main id="fretboard-container">
+        <table id="fretboard"></table>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
