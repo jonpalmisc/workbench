@@ -37,6 +37,10 @@
       background: #aceebb;
     }
 
+    td.pr {
+      background: #ffcecb;
+    }
+
     td.args {
       background: #ecd8ff;
     }
@@ -63,9 +67,9 @@
   <h3>AArch64 Registers</h3>
   <table>
     <tr class="nbb">
-      <td class="cat rs" rowspan="6">Caller-saved</td>
+      <td class="cat rs" rowspan="9">Caller-saved</td>
       <td>x0</td>
-      <td class="note args" rowspan="3">Arguments</td>
+      <td class="note args" rowspan="3">Call arguments</td>
     </tr>
     <tr class="nbb">
       <!-- <td>&#x22EE;</td> -->
@@ -75,19 +79,33 @@
       <td>x7</td>
     </tr>
     <tr class="nbb">
-      <td>x9</td>
-      <td class="note gp" rowspan="6">General use</td>
+      <td>x8</td>
+      <td class="note gp" rowspan="3">General use</td>
     </tr>
     <tr class="nbb">
       <td>...</td>
     </tr>
     <tr>
+      <td>x15</td>
+    </tr>
+
+    <tr class="nbb">
+      <td>x16</td>
+      <td class="note gp" rowspan="2">General use & PAC</td>
+    </tr>
+    <tr>
+      <td>x17</td>
+    </tr>
+
+    <tr class="">
       <td>x18</td>
+      <td class="note pr" rowspan="1">Platform-reserved</td>
     </tr>
 
     <tr class="nbb">
       <td class="cat es" rowspan="4">Callee-saved</td>
       <td>x19</td>
+      <td class="note gp" rowspan="3">General use (locals)</td>
     </tr>
     <tr class="nbb">
       <td>...</td>
