@@ -2,7 +2,7 @@ import Testing
 
 @testable import Day02
 
-@Test func examples() async throws {
+@Test func day02() async throws {
   #expect(invalidInRange(11...22, rules: .part1) == [11, 22])
   #expect(invalidInRange(11...22, rules: .part2) == [11, 22])
   #expect(invalidInRange(99...115, rules: .part1) == [99])
