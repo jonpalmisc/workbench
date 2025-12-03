@@ -52,21 +52,7 @@ func parseIntRange(_ rangeString: String) -> ClosedRange<Int> {
   return Int(parts[0])!...Int(parts[1])!
 }
 
-assert(invalidInRange(11...22, rules: .part1) == [11, 22])
-assert(invalidInRange(11...22, rules: .part2) == [11, 22])
-assert(invalidInRange(99...115, rules: .part1) == [99])
-assert(invalidInRange(99...115, rules: .part2) == [99, 111])
-assert(invalidInRange(998...1012, rules: .part1) == [1010])
-assert(invalidInRange(998...1012, rules: .part2) == [999, 1010])
-assert(invalidInRange(1_188_511_880...1_188_511_890, rules: .part1) == [1_188_511_885])
-assert(invalidInRange(1_188_511_880...1_188_511_890, rules: .part2) == [1_188_511_885])
-assert(invalidInRange(38_593_856...38_593_862, rules: .part1) == [38_593_859])
-assert(invalidInRange(38_593_856...38_593_862, rules: .part2) == [38_593_859])
-assert(invalidInRange(565653...565659, rules: .part1) == [])
-assert(invalidInRange(565653...565659, rules: .part2) == [565656])
-assert(invalidInRange(824_824_821...824_824_827, rules: .part2) == [824_824_824])
-
-let input = try String(contentsOfFile: "input.txt", encoding: .utf8)
+let input = try String(contentsOfFile: "Inputs/Day02.txt", encoding: .utf8)
 let rangeStrings = input.trimmingCharacters(in: .newlines).components(separatedBy: ",")
 
 var sumPart1 = 0

@@ -61,7 +61,7 @@ class Dial {
   }
 }
 
-let input = try String(contentsOfFile: "input.txt", encoding: .utf8)
+let input = try String(contentsOfFile: "Inputs/Day01.txt", encoding: .utf8)
 let lines = input.components(separatedBy: .newlines).filter { !$0.isEmpty }
 
 let dial = Dial()
