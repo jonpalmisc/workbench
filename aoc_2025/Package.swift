@@ -3,7 +3,7 @@
 import Foundation
 import PackageDescription
 
-var dayTargets = (1...2).map { Target.executableTarget(name: String(format: "Day%02d", $0)) }
+var dayTargets = (1...3).map { Target.executableTarget(name: String(format: "Day%02d", $0)) }
 
 let package = Package(
   name: "AOC",
