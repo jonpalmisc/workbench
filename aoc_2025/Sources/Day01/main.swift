@@ -1,4 +1,4 @@
-import Foundation
+import Shared
 
 enum Direction {
   case left
@@ -61,8 +61,7 @@ class Dial {
   }
 }
 
-let input = try String(contentsOfFile: "Inputs/Day01.txt", encoding: .utf8)
-let lines = input.components(separatedBy: .newlines).filter { !$0.isEmpty }
+let lines = puzzleInputAsLines(day: 1, includeEmpty: false)
 
 let dial = Dial()
 for line in lines {

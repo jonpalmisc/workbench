@@ -1,4 +1,4 @@
-import Foundation
+import Shared
 
 // https://www.hackingwithswift.com/example-code/language/how-to-split-an-array-into-chunks
 extension Array {
@@ -52,7 +52,7 @@ func parseIntRange(_ rangeString: String) -> ClosedRange<Int> {
   return Int(parts[0])!...Int(parts[1])!
 }
 
-let input = try String(contentsOfFile: "Inputs/Day02.txt", encoding: .utf8)
+let input = puzzleInput(day: 2)
 let rangeStrings = input.trimmingCharacters(in: .newlines).components(separatedBy: ",")
 
 var sumPart1 = 0

@@ -1,4 +1,4 @@
-import Foundation
+import Shared
 
 func digitsToInt(_ digits: [Int]) -> Int {
   return Int(digits.map(String.init).joined())!
@@ -32,8 +32,7 @@ func bestJoltage(_ bank: String, length: Int) -> Int {
   return digitsToInt(best)
 }
 
-let input = try String(contentsOfFile: "Inputs/Day03.txt", encoding: .utf8)
-let lines = input.components(separatedBy: .newlines).filter { !$0.isEmpty }
+let lines = puzzleInputAsLines(day: 3, includeEmpty: false)
 
 var sum = 0
 var sum2 = 0

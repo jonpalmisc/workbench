@@ -1,4 +1,4 @@
-import Foundation
+import Shared
 
 class Map {
   private var data: [[Bool]]
@@ -59,8 +59,7 @@ class Map {
   }
 }
 
-let input = try String(contentsOfFile: "Inputs/Day04.txt", encoding: .utf8)
-let map = Map(text: input)
+let map = Map(text: puzzleInput(day: 4))
 
 print(map.reachablePoints(withRemoval: false))
 print(map.reachablePoints(withRemoval: true))
