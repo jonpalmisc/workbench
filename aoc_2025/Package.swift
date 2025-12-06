@@ -3,7 +3,7 @@
 import Foundation
 import PackageDescription
 
-var dayTargets = (1...4).map {
+var dayTargets = (1...6).map {
   Target.executableTarget(
     name: String(format: "Day%02d", $0), dependencies: [.byName(name: "Shared")])
 }
